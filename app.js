@@ -28,7 +28,7 @@ targetURL.on('line', sendGETrequest(line));
 } while(True);
 
 function sendGETrequest(someURL){
-  request(someURL, { json: true }; (err, res, body) => {
+  request(someURL, { json: true }, (err, res, body) => {
     if (err) { return console.log(err); }
       console.log(body.url);
       console.log(body.explanation);
