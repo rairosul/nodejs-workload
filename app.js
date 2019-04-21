@@ -24,7 +24,8 @@ do {
 const targetURL = readline.createInterface({
   input: fs.createReadStream('urls.txt')
 });
-targetURL.on('line', sendGETrequest(line));
+targetURL.on('line', function(line));
+sendGETrequest(line);
 } while(True);
 
 function sendGETrequest(someURL){
