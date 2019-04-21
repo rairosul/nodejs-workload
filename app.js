@@ -27,7 +27,7 @@ const targetURL = readline.createInterface({
 targetURL.on('line', (line) => {
   sendGETrequest(line);
 });
-} while(True);
+} while(true);
 
 function sendGETrequest(someURL){
   request(someURL, { json: true }, (err, res, body) => {
