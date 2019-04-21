@@ -22,7 +22,7 @@ delay between http requests.
 
 do {
 const targetURL = readline.createInterface({
-  input: fs.createReadStream('urls.txt');
+  input: fs.createReadStream('urls.txt')
 });
 targetURL.on('line', sendGETrequest(line));
 } while(True);
