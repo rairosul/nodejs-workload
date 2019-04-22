@@ -15,7 +15,8 @@ RUN \
   rm -fr /var/apps/nodejs-workload/.git ;\
   cd /var/apps/nodejs-workload ;\
   npm install;\
-  npm install request@2.88.0;\
+  npm install --save request;\
+  npm install --save request-promise;\
   chmod +x run.sh
 
 
