@@ -3,7 +3,7 @@ Simple node.js app to hit urls from a list
 with http requests
 *****************************************/
 
-// require(`./ibmapm`);
+// require('./ibmapm');
 const fs = require('fs');
 const readline = require('readline');
 const request = require('request-promise');
@@ -46,4 +46,5 @@ function sendGETrequest(someURL){
     .catch(function (err) {
       console.log(err);
     })
-    sleep(2000);  //
+    // sleep(2000);
+}
