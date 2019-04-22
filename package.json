@@ -6,7 +6,7 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "request": "^2.88.0",
+    "request": "^2.34.0",
     "request-promise": "^4.2.4"
   },
   "description": "Simple app to make http requests to other known apps",
