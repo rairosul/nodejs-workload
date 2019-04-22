@@ -6,6 +6,21 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "request": "2.88.x"
-  }
-}  
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  },
+  "description": "Simple app to make http requests to other known apps",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rairosul/nodejs-workload.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rairosul/nodejs-workload/issues"
+  },
+  "homepage": "https://github.com/rairosul/nodejs-workload#readme"
+}
+ 
