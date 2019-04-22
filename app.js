@@ -46,4 +46,5 @@ function sendGETrequest(someURL){
     .catch(function (err) {
       console.log(err);
     })
-    sleep(2000);  //
+    // sleep(2000);
+}
