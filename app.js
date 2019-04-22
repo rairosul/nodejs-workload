@@ -20,12 +20,14 @@ delay between http requests.
 
 */
 
-do {
 const targetURL = readline.createInterface({
   input: fs.createReadStream('urls.txt')
 });
-targetURL.on('line', sendGETrequest(line));
-} while(True);
+
+targetURL.on('line', (line) => {
+  sendGETrequest(line);
+});
+
 
 function sendGETrequest(someURL){
   request(someURL, { json: true }, (err, res, body) => {
