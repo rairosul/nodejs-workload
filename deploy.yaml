@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nodejs-workload
+  labels:
+    app: nodejs-workload
+spec:
+  selector:
+    matchLabels:
+      app: nodejs-workload
+      pod: nodejs-workload
+  replicas: 1
+  template:
+    metadata:
+      name: nodejs-workload
+      labels:
+        app: nodejs-workload
+        pod: nodejs-workload
+    spec:
+      containers:
+      - name: nodejs-workload
+        image: mycluster.icp:8500/default/nodejs-workload:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 27500
+          protocol: TCP
