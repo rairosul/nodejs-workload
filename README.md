@@ -1,5 +1,5 @@
 # nodejs-workload
-Simple app to make http requests to other urls
+Simple app to make http requests to other urls, every 20 seconds.
 
 1. Edit urls.txt with the urls to send GET requests to, one per line.
 2. Build and tag your docker image, e.g. docker build -t mycluster.icp:8500/default/nodejs-workload:latest
