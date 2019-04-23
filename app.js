@@ -20,40 +20,18 @@ delay between http requests.
 
 */
 
-var allURLs = [];
-var count = 0;
-
-const targetURL = readline.createInterface({
-  input: fs.createReadStream('urls.txt')
-});
-targetURL.on('line', (line) => {
-  allURLs[count] = line;
-  count++;
-  });
-targetURL.on('close', function () {
-    console.log('read stream closed');
-});
-targetURL.on('error', function (err) {
-    console.log(err);
-});
-
-var arrayLength = allURLs.length;
-
-// Endlessly cycle through the URLs.
+var allURLs = fs.readFileSync('urls.txt', 'utf8').split('\n');
 do {
-  for (i=0; i < arrayLength; i++){
-    sendGETrequest(allURLs[i]);
-    sendDelay();
+  for (i=0; i < allURLs.length; i++){
+    setTimeout(sendGETrequest, 1500, allURLs[i]);
+    console.log(`URL: ${allURLs[i]} sent`);
+    waitFor(500); // milliseconds
   }
 } while(true);
 
-async function sendDelay(){
-  await sleep(500);
-  console.log('0.5 second sleep');
-}
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+function waitFor(someTime){
+  var waitTill =  new Date(new Date().getTime() + someTime);
+  while(waitTill > new Date()){}
 }
 
 function sendGETrequest(someURL){
@@ -68,5 +46,4 @@ function sendGETrequest(someURL){
     .catch(function (err) {
       console.log(err);
     })
-    // sleep(2000);
 }
