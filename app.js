@@ -47,7 +47,7 @@ do {
   }
 } while(true);
 
-aysnc function sendDelay(){
+async function sendDelay(){
   await sleep(500);
   console.log('0.5 second sleep');
 }
