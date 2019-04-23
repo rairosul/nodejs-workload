@@ -5,8 +5,6 @@ with http requests
 
 // require('./ibmapm');
 const fs = require('fs');
-const readline = require('readline');
-const request = require('request-promise');
 
 /* This block runs repeatedly. It creates a stream
 for a file 'urls.txt', and runs sendGETrequest on
